@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+@import "reset";
+@import"animation";
+
+@mixin responsive($width) {
+   @media only screen and (max-width: $width) {
+     @content;
+   }
+ }
+
+$font-stack: 'PT Sans', sans-serif;
+$background-color: black;
+$font-color: rgba(255, 255, 255, 0.877);
+$font-color-2: magenta;
+$boxColor: #333;
+
+//Background & Font
+body{
+    font: 100% $font-stack;
+    color: $font-color;
+    background-color: $background-color;
+    }
+
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+    @include responsive(600px) {
+     line-height: 1.2;
+     word-wrap: break-word;
+     font-size: 0.8em;
+    }
+}
+
+h1 {
+    display: block;
+    font-size: 2.5em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-align: center;
+    @include responsive(600px) {
+      font-size:2.0em;
+    }
+}
+
+h2{
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-right: 0;
+    font-weight: bold;
+    @include responsive(600px) {
+      font-size:1.2em;
+    }
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 0;
+    font-weight: bold;
+    word-wrap: break-word;
+    @include responsive(600px) {
+      font-size: 1.0em;
+    }
+}
+
+a {
+   color: cyan;
+}
+
+a:hover {
+   color: yellow;
+}
+
+// Main content - flexbox
+.ok {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+//Timeline - boxes
+#e-output {
+    color: $font-color-2;
+}
+
+.magenta {
+    color: $font-color-2;
+}
+
+* {
+    box-sizing: border-box;
+ }
+ 
+ .timeline {
+    position: relative;
+    margin: 0 auto;
+    background-color: inherit;
+    @include responsive(600px) {
+      width: 100%;
+    }
+ }
+ 
+ .timeline:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: magenta;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -2px;
+ }
+ 
+ .timeline--first:after {
+    top: 20px;
+ }
+ 
+ .era {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20px;
+ }
+ 
+ .era__title {
+    background-color: magenta;
+    color: #EEEEEE;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: default;
+ }
+ 
+ .entry {
+    padding: 10px 30px 40px 30px;
+    width: 50%;
+    position: relative;
+    background-color: inherit;
+ }
+ 
+ .entry--right {
+    margin-left: 50%;
+ }
+ 
+ .entry__content {
+    padding: 20px 30px;
+    background-color: #222;
+    position: relative;
+    border-radius: 4px;
+    cursor: default;
+    transition: all 0.3s ease 0s;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.2);
+
+    @include responsive(600px) {
+      padding: 10px;
+    }
+ }
+ 
+ .entry__content:hover {
+    background-color: #333;
+ }
+ 
+ .entry:before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 20px;
+    width: 0;
+    z-index: 1;
+ }
+ 
+ .entry:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px;
+    background-color: #EEEEEE;
+    border: 4px solid magenta;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+ }
+ 
+ .entry--right:after {
+    right: auto;
+    left: -12px;
+ }
+ 
+
+ #wb-output {
+    margin-bottom: 60px;
+ }
+
+ //Admin
+#adminLink {
+   text-align: end;
+   margin: 10px;
+}
+
+.admin-input, .formLog {
+
+   input {
+      padding: 5px;
+      border-radius: 2px;
+      margin:10px;
+   }
+
+   input[type=text]:focus {
+      color: $font-color-2;
+   }
+}
+
+//Button
+.btn, .button, button {
+   padding: 10px;
+   cursor: pointer;
+   border-radius: 3px;
+   margin: 10px;
+   display: inline-block;
+   background:$background-color;
+   border: 2px solid #222;
+   color: $font-color;
+   transition: all 0.4s ease 0s;
+
+   &:hover {
+       border: 2px solid #a01982;
+   }
+}
+
+//Footer
+#mainFooter { border-top: 2px solid #222;
+	padding: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox; 
+	display: flex; 
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly; 
+   justify-content: space-evenly;
+   
+   @include responsive(600px) {
+      flex-direction: column;
+    }
+
+}
+
+#secondFooter {
+   text-align: center;
+}
+
+#col-1, #col-2 {width: 35%;
+   @include responsive(600px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+}
+
+
+#col-2 {display: -webkit-box; 
+	display: -ms-flexbox; 
+	display: flex; 
+	align-items: center;}
+
+/*** Sociala ikoner w3schools ***/
+.fa {padding: 20px; 
+		font-size: 30px; 
+		width:60px; 
+		text-align: center; 
+		text-decoration: none; 
+		margin: 5px 2px; 
+		margin-left: 20px;}
+  
+  .fa:hover {box-shadow: 0 5px 16px magenta;}
+  
+  .fa-facebook {background: #3B5998; color: white;}
+  
+  .fa-twitter {background: #55ACEE; color: white;}
+  
+  .fa-reddit {background: #ff5700; color: white;}
+  
+	.fa-linkedin {background: #007bb5; color: white;}
+ 

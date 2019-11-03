@@ -6,9 +6,9 @@ const livereload = require('gulp-livereload');
 
 //Using Gulp 3//
 
-// Copy all HTML files
-gulp.task('copyHtml',function(){
-    return gulp.src('*.html')
+// Copy all php files
+gulp.task('php',function(){
+    return gulp.src('*.php')
     .pipe(gulp.dest('dist'))
     .pipe(livereload()); //Force window update
 });
@@ -44,7 +44,7 @@ gulp.task('scripts',function(){
  //Watch - automize changes
  gulp.task('watch', function(){
   livereload.listen();
-  gulp.watch('*.html', gulp.series('copyHtml'));
+  gulp.watch('*.php', gulp.series('php'));
   gulp.watch('sass/*.scss', gulp.series ('sass'));
   //gulp.watch('js/*.js', gulp.series('babel'));
   gulp.watch('js/*.js', gulp.series('scripts'));
@@ -52,4 +52,4 @@ gulp.task('scripts',function(){
 });
 
  //Array
- gulp.task('default',gulp.parallel(['copyHtml','sass',/*'babel',*/'scripts','watch']));
+ gulp.task('default',gulp.parallel(['php','sass',/*'babel',*/'scripts','watch']));

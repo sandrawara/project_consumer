@@ -1,0 +1,1 @@
+"use strict";$(function(){$(".scroll-down").click(function(){return $("html, body").animate({scrollTop:$("section.ok").offset().top},"slow"),!1})});

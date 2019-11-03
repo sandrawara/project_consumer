@@ -1,1 +1,2 @@
 Header add "Cache-Control" "no-cache"
+Header set Access-Control-Allow-Origin "*"
