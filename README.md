@@ -7,12 +7,14 @@
 <p> Consumer innehåller en indexsida, en adminsida, style scss, gulpfile och ett Fetch Api.</p>
 
 För körning i exempelvis postman, kör dessa länkar:
-Get:http://sandrawara.se/portfolio/project/read_single.php?table=web_pages // Web pages tabellen
-Get: http://sandrawara.se/portfolio/project/read_single.php?table=education // Education tabellen
-Get: http://sandrawara.se/portfolio/project/read_single.php?table=work // Work tabellen
-Post: http://sandrawara.se/portfolio/project/create.php
-Put: http://sandrawara.se/portfolio/project/update.php
-Delete: http://sandrawara.se/portfolio/project/delete.php
+<ul>
+ <li> Get:http://sandrawara.se/portfolio/project/read_single.php?table=web_pages // Web pages tabellen</li>
+ <li>Get: http://sandrawara.se/portfolio/project/read_single.php?table=education // Education tabellen</li>
+ <li>Get: http://sandrawara.se/portfolio/project/read_single.php?table=work // Work tabellen</li>
+ <li>Post: http://sandrawara.se/portfolio/project/create.php</li>
+ <li>Put: http://sandrawara.se/portfolio/project/update.php</li>
+ <li>Delete: http://sandrawara.se/portfolio/project/delete.php</li>
+</ul>
 
 1. Index - Innehåller funktioner som skriver ut data från en databas med specifikationer skickade med Fetch Api.
 2. Administrationssida som innehåller ett enklare inloggningssytem med en logga ut knapp som tar en vidare till indexsidan. 
